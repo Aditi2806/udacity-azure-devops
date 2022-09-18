@@ -21,15 +21,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Setup Python 3.5
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with: 
-          python-version: 3.5
+          python-version: '3.5'
       - name: Install Dependencies
         run: make install
       - name: Lint with PyLint
         run: make lint
       - name: Test with PyTest
         run: make test
-        
-      - name: Run make command
-        run: make hello
